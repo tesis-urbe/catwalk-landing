@@ -1,49 +1,123 @@
+---
+import { ViewTransitions } from "astro:transitions";
+---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>catwalk</title>
-	</head>
-	<body>
-		<nav class="bg-catwalk-primary shadow-lg">
+  <head>
+    <meta charset="utf-8" />
+    <ViewTransitions />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>catwalk</title>
+  </head>
+  <body>
+    <nav class="bg-catwalk-primary shadow-lg">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between">
           <div class="flex space-x-7">
             <div>
               <a href="/" class="flex items-center py-4 px-2">
-                <span class="font-semibold text-catwalk-secondary text-lg">NavbarLogo</span>
+                <span class="font-semibold text-catwalk-secondary text-lg"
+                  >NavbarLogo</span
+                >
               </a>
             </div>
-            <div class="hidden md:flex items-center space-x-1 text-catwalk-secondary">
-              <a href="/" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Inicio</a>
-              <a href="/nosotros" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Sobre nosotros</a>
-              <a href="/servicios" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Servicios</a>
-              <a href="/contacto" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Contacto</a>
+            <div
+              class="hidden md:flex items-center space-x-1 text-catwalk-secondary"
+            >
+              <a
+                href="/"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Inicio</a
+              >
+              <a
+                href="/nosotros"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Sobre nosotros</a
+              >
+              <a
+                href="/servicios"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Servicios</a
+              >
+              <a
+                href="/contacto"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Contacto</a
+              >
             </div>
           </div>
-          <div class="md:hidden flex items-center">
-          </div>
+          <div class="md:hidden flex items-center"></div>
         </div>
       </div>
     </nav>
-
-    <div class="container">
-      <slot />
+    <div>
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+      <div class="content bg-[#901b0c] rounded-md" transition:animate="fade">
+        <div class="container text-[#DAF7A6]" >
+          <slot />
+        </div>
+      </div>
     </div>
     <footer class="bg-catwalk-secondary rounded text-center p-2">
       derechos xd
     </footer>
-	</body>
+  </body>
 </html>
 
 <style>
   body {
-	min-height: 100vh;
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	grid-template-columns: 100vw;
-}
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100vw;
+  }
 
+  .bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #900C3F 50%, #DAF7A6 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+  }
+
+  .bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+  }
+
+  .bg3 {
+    animation-duration: 5s;
+  }
+
+  .content {
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    font-family: monospace;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(25%);
+    }
+  }
 </style>
