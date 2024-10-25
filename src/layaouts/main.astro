@@ -1,0 +1,49 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>catwalk</title>
+	</head>
+	<body>
+		<nav class="bg-catwalk-primary shadow-lg">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <div>
+              <a href="/" class="flex items-center py-4 px-2">
+                <span class="font-semibold text-catwalk-secondary text-lg">NavbarLogo</span>
+              </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-1 text-catwalk-secondary">
+              <a href="/" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Inicio</a>
+              <a href="/nosotros" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Sobre nosotros</a>
+              <a href="/servicios" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Servicios</a>
+              <a href="/contacto" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Contacto</a>
+            </div>
+          </div>
+          <div class="md:hidden flex items-center">
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <slot />
+    </div>
+    <footer class="bg-catwalk-secondary rounded text-center p-2">
+      derechos xd
+    </footer>
+	</body>
+</html>
+
+<style>
+  body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 100vw;
+}
+
+</style>
