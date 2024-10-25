@@ -1,7 +1,19 @@
 ---
 import Main from "../layaouts/main.astro"
+import WhiteBlock from "../layaouts/whiteBlock.astro"
 ---
 
 <Main>
-	Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores quod inventore eum? Asperiores impedit saepe ratione voluptate quaerat. Ducimus sed excepturi quos minus tempora, eos quas maxime animi iste quo!
+	<WhiteBlock title="catwalk">
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores quod inventore eum? Asperiores impedit saepe ratione voluptate quaerat. Ducimus sed excepturi quos minus tempora, eos quas maxime animi iste quo!
+	</WhiteBlock>
+	
+	<div class="grid grid-cols-2 place-items-center my-2">
+    <div class="bg-catwalk-secondary rounded p-4 text-xl">
+      productos
+    </div>
+		<div class="bg-catwalk-secondary rounded p-4 text-xl">
+      productos
+    </div>
+  </div>
 </Main>
