@@ -1,19 +1,27 @@
 ---
-import Main from "../layaouts/main.astro"
-import WhiteBlock from "../layaouts/whiteBlock.astro"
+import Main from "../layaouts/main.astro";
+import WhiteBlock from "../layaouts/whiteBlock.astro";
 ---
 
 <Main>
-	<WhiteBlock title="catwalk">
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores quod inventore eum? Asperiores impedit saepe ratione voluptate quaerat. Ducimus sed excepturi quos minus tempora, eos quas maxime animi iste quo!
-	</WhiteBlock>
-	
-	<div class="grid grid-cols-2 place-items-center my-2">
-    <div class="bg-catwalk-secondary rounded p-4 text-xl">
-      productos
+  <WhiteBlock title="catwalk">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores quod
+    inventore eum? Asperiores impedit saepe ratione voluptate quaerat. Ducimus
+    sed excepturi quos minus tempora, eos quas maxime animi iste quo!
+  </WhiteBlock>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-2 mb-2">
+    <div class="bg-catwalk-secondary rounded p-4 text-xl w-[500px]">
+      <img src="/foto_1.jpeg" alt="">
     </div>
-		<div class="bg-catwalk-secondary rounded p-4 text-xl">
-      productos
+    <div class="bg-catwalk-secondary rounded p-4 text-xl w-[500px]">
+      <img src="/foto_2.jpeg" alt="">
+    </div>
+    <div class="bg-catwalk-secondary rounded p-4 text-xl w-[500px]">
+      <img src="/foto_3.jpeg" alt="">
+    </div>
+    <div class="bg-catwalk-secondary rounded p-4 text-xl w-[500px]">
+      <img src="/foto_4.jpeg" alt="">
     </div>
   </div>
 </Main>

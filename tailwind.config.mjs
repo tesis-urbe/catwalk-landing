@@ -14,7 +14,8 @@ export default {
 			'gray': '#8492a6',
 			'gray-light': '#d3dce6',
 			'catwalk-primary': '#900C3F',
-			'catwalk-secondary': '#DAF7A6'
+			'catwalk-secondary': '#ffe5ef',
+			"catwalk-accent":"#900c81"
 		}
 	},
 	plugins: [],
