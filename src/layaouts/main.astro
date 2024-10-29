@@ -18,14 +18,10 @@ import { ViewTransitions } from "astro:transitions";
           <div class="flex space-x-7">
             <div>
               <a href="/" class="flex items-center py-4 px-2">
-                <span class="font-semibold text-catwalk-secondary text-lg"
-                  >NavbarLogo</span
-                >
+                <img src="/catwalk_icon.png" class="rounded w-[30px]" alt="" />
               </a>
             </div>
-            <div
-              class="flex items-center space-x-1 text-catwalk-secondary"
-            >
+            <div class="flex items-center space-x-1 text-catwalk-secondary">
               <a
                 href="/"
                 class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
@@ -52,16 +48,19 @@ import { ViewTransitions } from "astro:transitions";
         </div>
       </div>
     </nav>
-    <div>
+    <div class="py-8">
       <div class="bg"></div>
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
-      <div class="content bg-[#901b0c] rounded-md" transition:animate="fade">
-        <h1 class="text-xl">catwalk logo</h1>
+      <div
+        class="flex justify-center content-center w-[250px] p-4 bg-[#901b0c] rounded-md mx-auto"
+        transition:animate="fade"
+      >
+        <!-- <h1 class="text-xl">catwalk logo</h1> -->
+        <img src="/catwalk_icon.png" class="rounded" alt="" />
       </div>
-      
     </div>
-    <div class="w-[100vw]" >
+    <div class="w-[100vw]">
       <slot />
     </div>
     <footer class="bg-gray-dark text-center p-2 text-catwalk-secondary">
@@ -80,7 +79,7 @@ import { ViewTransitions } from "astro:transitions";
 
   .bg {
     animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #900C3F 50%, #DAF7A6 50%);
+    background-image: linear-gradient(-60deg, #900c3f 50%, #daf7a6 50%);
     bottom: 0;
     left: -50%;
     opacity: 0.5;
@@ -103,11 +102,13 @@ import { ViewTransitions } from "astro:transitions";
     box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     left: 50%;
-    padding: 10vmin;
     position: fixed;
-    text-align: center;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .fade {
+    animation: fade-animation .5s ease-in;
   }
 
   h1 {
@@ -120,6 +121,16 @@ import { ViewTransitions } from "astro:transitions";
     }
     100% {
       transform: translateX(25%);
+    }
+  }
+
+  @keyframes fade-animation {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
     }
   }
 </style>
