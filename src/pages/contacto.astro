@@ -5,13 +5,93 @@ import WhiteBlock from "../layaouts/whiteBlock.astro";
 
 <Main>
   <WhiteBlock>
-    <p class="text-xl text-center font-semibold">Para ponerse en contacto con nosotros, puede acceder a nuestra cuenta de Instagram, o enviarnos a nuestro Whatsapp o Gmail.
-      <br>
-      <br>
-      IG: @catwalk.mcbo.
-      <br>
-      ws: +584128058292.
-      <br>
-      Gmail: catwalkmcbo11@gmail.com.
-    </WhiteBlock></p>
+    <p class="text-xl text-center font-semibold">
+      Para ponerse en contacto con nosotros, puede acceder a nuestra cuenta de
+      Instagram, o enviarnos a nuestro Whatsapp o Gmail.
+      <br />
+      <br />
+      IG: <a href="https://www.instagram.com/catwalk.mcbo/" target="_blank" class="reveal-text text-catwalk-accent cursor-pointer">@catwalk.mcbo.</a>
+      <br />
+      ws: <a href="https://api.whatsapp.com/send?phone=584128058292" target="_blank" class="reveal-text text-catwalk-accent cursor-pointer">+584128058292.</a>
+      <br />
+      Gmail: <a href="mailto:catwalkmcbo11@gmail.com" class="reveal-text text-catwalk-accent cursor-pointer">catwalkmcbo11@gmail.com</a>
+    </p>
+  </WhiteBlock>
 </Main>
+
+<style>
+:root {
+  --delay: 0;
+  --duration: 800ms;
+  --iterations: 1;
+}
+/* •·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•· */
+
+
+.reveal-text,
+.reveal-text::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.reveal-text {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  animation-name: clip-text;
+  white-space: nowrap;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #900C3F;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: text-revealer;
+  }
+  
+}
+
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+
+@keyframes text-revealer {
+  
+  0%, 50% {
+    transform-origin: 0 50%;
+  }
+  
+  60%, 100% {
+    transform-origin: 100% 50%;   
+  }
+
+  
+  60% {
+    transform: scaleX(1);
+  }
+  
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+
+</style>
